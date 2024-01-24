@@ -22,7 +22,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install wandb
-    - name: Test with pytest
+    - name: Launch agents
       run: |
         export SWEEP_ID="${{ inputs.sweep_id }}"
         python3 launch-agents.py
