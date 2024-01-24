@@ -1,0 +1,6 @@
+agents/
+ckpts/
+.venv/
+wandb/
+.ipynb_checkpoints/
+test.ipynb
