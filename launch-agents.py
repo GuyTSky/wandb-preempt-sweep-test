@@ -8,7 +8,7 @@ import signal
 from pathlib import Path
 import shutil
 
-shutil.rmtree('agents')
+shutil.rmtree('agents', ignore_errors=True)
 
 def now():
     return datetime.now().isoformat()
@@ -60,5 +60,5 @@ while True:
     proc.send_signal(signal.SIGTERM)
     proc.wait()
     launch_agent(i)
-    
+
     time.sleep(randint(20,40))
