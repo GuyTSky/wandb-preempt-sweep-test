@@ -23,6 +23,8 @@ jobs:
       run: |
         pip install wandb
     - name: Launch agents
+      env:
+        WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
       run: |
         export SWEEP_ID="${{ inputs.sweep_id }}"
         python3 launch-agents.py
@@ -30,7 +32,7 @@ jobs:
       with:
         name: agent-logs
         path: |
+          agents/agent_0/out.log
           agents/agent_1/out.log
           agents/agent_2/out.log
           agents/agent_3/out.log
-          agents/agent_4/out.log
